@@ -29,7 +29,7 @@ CORS(app, origins=[
 
 
 # ========== DATABASE INIT ==========
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb://admin:FFaa2002%40@localhost:27017/')
 db = client['car_database']
 users_collection = db['users']
 cars_collection = db['cars']
@@ -1116,4 +1116,4 @@ create_default_admin()
 
 # ========== MAIN ==========
 if __name__ == '__main__':
-    app.run(debug=True, host="localhost", port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)
