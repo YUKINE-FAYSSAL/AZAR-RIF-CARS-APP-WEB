@@ -1,0 +1,125 @@
+/* Profile.css */
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.profile-info {
+  display: flex;
+  gap: 2rem;
+}
+
+.profile-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f43f5e;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details h2 {
+  color: #22314a;
+  margin-bottom: 1rem;
+}
+
+.profile-details p {
+  margin: 0.5rem 0;
+  color: #4b5563;
+}
+
+.profile-actions {
+  margin-top: 1.5rem;
+}
+
+.edit-profile-btn {
+  background-color: #f43f5e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.edit-profile-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.profile-form {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.save-btn {
+  background-color: #f43f5e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #ef4444;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .profile-info {
+    flex-direction: column;
+  }
+  
+  .profile-avatar {
+    align-self: center;
+  }
+}

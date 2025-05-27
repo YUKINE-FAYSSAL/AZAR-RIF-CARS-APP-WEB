@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us and Contact - AZARYOUH RIF CARS</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 40px 0;
+            color: #333;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+        .header .highlight {
+            font-size: 1.5em;
+            color: #ff0000; /* Red color for highlighting */
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .map-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .intro-text {
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .intro-text h2 {
+            font-size: 2em;
+            color: #B31B1B; /* Title color */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .intro-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+        .agency-info, .contact-form {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            flex: 1 1 45%;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding shadow for a nice effect */
+            border-radius: 8px; /* Rounded corners for better aesthetics */
+        }
+        .agency-info h2, .contact-form h2 {
+            color: #B31B1B; /* Styling the headers */
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .agency-info p {
+            font-size: 1em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact-form button {
+            background-color: #B31B1B; /* Using the brand color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #930000; /* Darker shade on hover */
+        }
+        @media (max-width: 768px) {
+            .top-section {
+                flex-direction: column;
+            }
+            .agency-info, .contact-form {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3400.0312732007355!2d-4.0059330162593625!3d34.22188326993136!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9e1712554bf99f%3A0xc75a4904f63ba2d0!2sLocation%20de%20voiture%20Taza%20AZARYOUH%20RIF%20CAR!5e0!3m2!1sfr!2sma!4v1720985036958!5m2!1sfr!2sma" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="content">
+            <div class="intro-text">
+                <h2>Welcome to AZARYOUH RIF CARS</h2>
+                <p>Your premier choice for high-end car rentals and online booking. Since our founding in 2019, we have established ourselves as one of the leading agencies in the industry. Our carefully curated fleet offers a wide range of vehicles, from agile compact cars like the Renault Clio and Citroen C3 to luxurious SUVs like the Range Rover Velar and Hyundai Tucson. Our commitment to impeccable service is reflected at every step, from easy online booking to personalized vehicle delivery. At AZARYOUH RIF CARS, every journey is designed to offer comfort, style, and performance, ensuring you an unforgettable driving experience with every mile you travel.</p>
+            </div>
+            
+            <div class="top-section">
+                <div class="agency-info">
+                    <h2>CONTACT INFO</h2>
+                    <p>Ben Abdellah Immo AXA, Rue Ali Ibn Abi Talib Ang, Rue Allal Ben Abdallah, Taza 35000</p>
+                    <p>Phone: +212 661-306515</p>
+                    <p>Email: azaryouhrif@gmail.com</p>
+                </div>
+                <div class="contact-form">
+                    <h2>CONTACT FORM</h2>
+                    <form method="POST" action="{{ url_for('about') }}">
+                        {{ form.hidden_tag() }}
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="E-mail" required>
+                        <input type="text" name="phone" placeholder="Phone">
+                        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                        <button type="submit">SEND</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

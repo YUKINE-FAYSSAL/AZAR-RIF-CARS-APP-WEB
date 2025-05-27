@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel in Morocco</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cover {
+            background-image: url('../static/home/poster/hero_casablancamorocco_520637860.jpg');
+            background-size: cover;
+            background-position: top;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(206, 246, 25);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .video-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 40px;
+    flex-direction: row-reverse; /* Place video first */
+}
+
+.video-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+.video-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.video-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.video-container {
+    flex: 0 0 55%;
+    max-width: 55%;
+    position: relative;
+    cursor: pointer;
+}
+
+.video-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(186, 179, 179, 0.6);
+    border-radius: 50%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.video-overlay img {
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .video-section {
+        flex-direction: column-reverse; /* Text first, then video on smaller screens */
+        text-align: center;
+    }
+
+    .video-text, .video-container {
+        max-width: 100%;
+    }
+}
+
+
+        .section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .section.morocco {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.morocco-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.morocco-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.morocco-text h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.morocco-text p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.morocco-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.morocco-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.morocco-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.morocco-images img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section.taza {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.taza-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.taza-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.taza-text h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.taza-text p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.taza-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.taza-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.taza-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.taza-images img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .taza-content {
+        flex-direction: column;
+    }
+
+    .taza-text, .taza-images {
+        max-width: 100%;
+    }
+
+    .taza-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .morocco-content {
+        flex-direction: column;
+    }
+
+    .morocco-text, .morocco-images {
+        max-width: 100%;
+    }
+}
+
+        @media (max-width: 768px) {
+            .video-section, .section.morocco, .section.taza {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .video-text, .section.morocco img, .section.taza img {
+                max-width: 100%;
+            }
+        }
+
+
+
+/* General Title Style */
+.section h2,
+.video-text h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b01c1c; /* Matches the red color from the provided image */
+    text-transform: uppercase; /* Makes the text uppercase like "RENTAL DEALS" */
+    text-align: center; /* Centers the title */
+    margin-bottom: 20px;
+}
+
+/* Morocco Section Styling */
+.section.morocco {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.morocco-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    align-items: center; /* Vertically centers the content within each flex item */
+}
+
+.morocco-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: center; /* Centers the text horizontally */
+}
+
+.morocco-text p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.morocco-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left; /* Keeps the list items aligned to the left */
+    margin: 0 auto; /* Centers the list within the text block */
+}
+
+.morocco-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.morocco-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.morocco-images img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .morocco-content {
+        flex-direction: column;
+    }
+
+    .morocco-text, .morocco-images {
+        max-width: 100%;
+    }
+}
+
+    </style>
+    <script>
+function playVideo() {
+    const videoContainer = document.querySelector('.video-container');
+    videoContainer.style.position = "relative";
+    videoContainer.style.paddingBottom = "30.25%"; /* 16:9 aspect ratio */
+    videoContainer.style.height = "0";
+    videoContainer.innerHTML = `<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/xgYqPKrST-k?si=4Glpg1t2lFz2WAYU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+}
+
+
+    </script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="cover">
+        <h1>Explore Morocco's Beauty</h1>
+    </div>
+
+    <div class="container">
+        <!-- Video Section -->
+        <div class="video-section">
+            <div class="video-container" onclick="playVideo()">
+                <img src="../static/home/visit/Design sans titre (1).png" alt="Video Thumbnail">
+                <div class="video-overlay">
+                    <img src="../static/home/visit/play-on-video.png" alt="Play Button">
+                </div>
+            </div>
+            <div class="video-text">
+                <h2>Explore Morocco's Popular Destinations</h2>
+                <p>Explore the sweeping vistas of the Sahara Desert, wander through the lively souks of vibrant Fes and Marrakech, stroll along the azure streets of Chefchaouen, and feel the coastal breeze in Essaouira. Immerse yourself in the vibrant spectrum of colors, sounds, and tastes that characterize Morocco's rich tapestry of landscapes and cultures.</p>
+                <p>Whether you're captivated by the timeless charm of historical landmarks or seeking the peaceful serenity of coastal panoramas, Best Travel Morocco, your premier Morocco travel agency, provides an unforgettable journey tailored to your desires.</p>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- Morocco Section -->
+        <div class="section morocco">
+            <div class="morocco-content">
+                <div class="morocco-text">
+                    <h2>About Morocco</h2>
+                    <p>Morocco is a land of contrasts, where ancient traditions blend with modern life. The country offers a rich cultural experience with its stunning landscapes, vibrant cities, and historical landmarks.</p>
+                    <ul>
+                        <li><strong>Marrakech:</strong> Known for its lively souks, historic palaces, and beautiful gardens.</li>
+                        <li><strong>Casablanca:</strong> A modern city with a rich history, famous for its architecture and cultural sites.</li>
+                        <li><strong>Fez:</strong> Home to one of the oldest universities in the world and a maze-like medina.</li>
+                        <li><strong>Tangier:</strong> A port city with a blend of European and Moroccan influences.</li>
+                    </ul>
+                </div>
+                <div class="morocco-images">
+                    <img src="../static/home/visit/Morocco/m1.jpg" alt="Morocco Image 1">
+                    <img src="../static/home/visit/Morocco/m2.webp" alt="Morocco Image 2">
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Taza Section -->
+        <div class="section taza">
+            <div class="taza-content">
+                <div class="taza-text">
+                    <h2>Discover Taza</h2>
+                    <p>Taza, located in northern Morocco, is known for its historical significance and natural beauty. The city offers a mix of ancient architecture, stunning landscapes, and cultural experiences that make it a unique destination.</p>
+                    <ul>
+                        <li>Explore the Tazekka National Park</li>
+                        <li>Visit the Great Mosque of Taza</li>
+                        <li>Experience the local markets and traditional crafts</li>
+                    </ul>
+                </div>
+                <div class="taza-images">
+                    <img src="../static/home/visit/taza/t1.jpeg" alt="Taza Image 1">
+                    <img src="../static/home/visit/taza/t2.jpg" alt="Taza Image 2">
+                    <img src="../static/home/visit/taza/t3.jpg" alt="Taza Image 3">
+                    <img src="../static/home/visit/taza/taza1.jpg" alt="Taza Image 4">
+                </div>
+            </div>
+        </div>
+        
+        
+    {% include 'footer.html' %}
+</body>
+</html>

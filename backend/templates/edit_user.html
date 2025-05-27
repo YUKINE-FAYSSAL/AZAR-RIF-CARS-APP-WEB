@@ -1,0 +1,20 @@
+{% extends 'admin_base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Modifier Utilisateur</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nom d'utilisateur</label>
+            <input type="text" class="form-control" value="{{ user.username }}" disabled>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rôle</label>
+            <select name="role" class="form-select">
+                <option value="user" {% if user.role == 'user' %}selected{% endif %}>Utilisateur</option>
+                <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Administrateur</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+</div>
+{% endblock %}

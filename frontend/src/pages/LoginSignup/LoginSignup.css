@@ -1,0 +1,142 @@
+/* LoginSignup.css */
+.login-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+}
+
+.login-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  border-radius: 3px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.login-container input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  outline: none;
+  background-color: #fff;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.login-container button:hover {
+  background: linear-gradient(to right, #43A047, #1B5E20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.login-container button:active {
+  transform: translateY(0);
+}
+
+.google-btn {
+  background: linear-gradient(to right, #4285F4, #34A853) !important;
+  box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3) !important;
+}
+
+.google-btn:hover {
+  background: linear-gradient(to right, #3367D6, #2E8B57) !important;
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4) !important;
+}
+
+.toggle-link {
+  color: #4285F4;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.toggle-link:hover {
+  color: #3367D6;
+  text-decoration: underline;
+}
+
+.error {
+  color: #E53935;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(229, 57, 53, 0.1);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.divider-text {
+  padding: 0 15px;
+  color: #757575;
+  font-size: 14px;
+}

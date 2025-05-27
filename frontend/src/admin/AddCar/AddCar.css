@@ -1,0 +1,244 @@
+/* AddCar.css */
+.editcar-container {
+  max-width: 630px;
+  margin: 45px auto 50px auto;
+  background: linear-gradient(120deg, #fff 90%, #f8f8ff 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 38px rgba(220, 50, 50, 0.10);
+  padding: 48px 36px 36px 36px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.editcar-container:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 16px 40px rgba(220, 50, 50, 0.16);
+}
+
+.editcar-container h2 {
+  color: #d60023;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 12px;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+.editcar-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 96px; height: 3px;
+  background: #d60023;
+  border-radius: 3px;
+}
+
+.editcar-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.editcar-form label,
+.editcar-form input,
+.editcar-form select,
+.editcar-form textarea {
+  width: 100%;
+}
+
+.editcar-form .form-row {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  .editcar-form .form-row {
+    flex-direction: row;
+  }
+  .editcar-form .half {
+    width: 48%;
+  }
+}
+@media (max-width: 599px) {
+  .editcar-form .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .editcar-form .half {
+    width: 100%;
+  }
+}
+
+.editcar-form input,
+.editcar-form textarea,
+.editcar-form select {
+  padding: 13px 16px;
+  border-radius: 11px;
+  border: 1.5px solid #ececec;
+  font-size: 1rem;
+  margin-top: 4px;
+  transition: border-color 0.3s, background 0.3s;
+  background: #f5f6fa;
+  outline: none;
+}
+
+.editcar-form input:focus,
+.editcar-form textarea:focus,
+.editcar-form select:focus {
+  border-color: #d60023;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(214, 0, 35, 0.08);
+}
+
+.editcar-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.checkbox-block {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 6px;
+}
+
+.editcar-btn {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #d60023, #a60018 90%);
+  color: #fff;
+  border: none;
+  padding: 15px 0;
+  border-radius: 27px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(214, 0, 35, 0.17);
+  transition: all 0.22s;
+  letter-spacing: 0.5px;
+}
+
+.editcar-btn:hover {
+  background: linear-gradient(120deg, #a60018, #d60023 90%);
+  transform: translateY(-1.5px) scale(1.01);
+  box-shadow: 0 9px 28px rgba(214, 0, 35, 0.22);
+}
+
+.editcar-btn:active {
+  transform: translateY(0);
+}
+
+.editcar-msg {
+  margin-top: 22px;
+  font-size: 1.08rem;
+  color: #27bb51;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(39, 187, 81, 0.08);
+  border-radius: 9px;
+  padding: 12px;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.editcar-imgs {
+  display: flex;
+  gap: 17px;
+  margin: 18px 0 10px 0;
+  flex-wrap: wrap;
+}
+
+.editcar-img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 6px;
+}
+.editcar-img {
+  width: 92px;
+  height: 67px;
+  object-fit: cover;
+  border-radius: 9px;
+  border: 1.5px solid #e5e5e5;
+  transition: transform 0.23s, box-shadow 0.23s;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.editcar-img:hover {
+  transform: scale(1.055);
+  box-shadow: 0 7px 24px rgba(214, 0, 35, 0.10);
+}
+
+.editcar-img-delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(220,0,35,0.86);
+  color: white;
+  border-radius: 50%;
+  padding: 3.5px 7px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 5;
+  border: 1px solid #fff;
+}
+
+.editcar-form input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  accent-color: #d60023;
+  margin-left: 10px;
+}
+
+.editcar-form input[type="file"] {
+  padding: 10px;
+  background: #f6f5fa;
+  border: 1.5px dashed #dadada;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.98rem;
+}
+
+.editcar-form input[type="file"]:hover {
+  background: #e9e9ec;
+  border-color: #d60023;
+}
+
+@media (max-width: 650px) {
+  .editcar-container {
+    padding: 23px 7px 23px 7px;
+    border-radius: 14px;
+  }
+  .editcar-form label {
+    font-size: 0.97rem;
+  }
+}
+.upload-btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: linear-gradient(135deg, #d60023, #a60018 90%);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.23s, box-shadow 0.23s;
+  box-shadow: 0 3px 10px rgba(214,0,35,0.12);
+}
+.upload-btn:hover {
+  background: linear-gradient(120deg, #a60018, #d60023 90%);
+  box-shadow: 0 7px 24px rgba(214,0,35,0.17);
+}
+.upload-block {
+  width: 100%;
+  text-align: left;
+  margin-top: 12px;
+}

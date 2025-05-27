@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - AZARYOUH RIF CARS</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        h1 {
+            text-align: center;
+            color: #B31B1B;
+            font-size: 3em;
+            margin-top: 20px;
+        }
+        .icon-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 50px 0;
+        }
+        .icon-card {
+            flex: 1 1 calc(33% - 30px);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .icon-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .icon-card i {
+            font-size: 60px;
+            color: #B31B1B;
+            margin-bottom: 25px;
+        }
+        .icon-card h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .icon-card h3::before {
+            content: '\f005'; /* Star icon, change as needed */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            font-size: 1.5em;
+            color: rgba(179, 27, 27, 0.1); /* Light icon color */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .icon-card p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .service-section {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+            border: 1px solid #000; /* Apply border to all service sections */
+        }
+        .service-section h2 {
+            font-size: 2.5em;
+            color: #B31B1B;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .service-section h2::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            font-size: 1.5em;
+            color: #B31B1B; /* Color of the icon */
+            left: -40px; /* Position the icon to the left of the text */
+            top: 50%;
+            transform: translateY(-50%);
+            content: attr(data-icon); /* Insert the icon content */
+        }
+        .service-section p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Styling for images */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            opacity: 0; /* Start with images hidden */
+            animation: fadeIn 0.7s forwards; /* Fade in the images */
+        }
+        .service-image {
+            max-width: 45%; /* Default size for large screens */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fade in effect */
+            }
+        }
+
+        /* Swiper styles */
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%; /* Ensure the slide uses full width */
+            margin: 0 auto; /* Center the slide */
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation Button */
+        .navigation-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            background-color: #B31B1B;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .navigation-button:hover {
+            background-color: #8a1a1a;
+            transform: translateY(-5px);
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+        /* Responsive adjustments for small devices */
+        @media (max-width: 768px) {
+            .icon-card p {
+                font-size: 0.75em; /* Smaller text in the icon cards */
+                line-height: 1.2;
+            }
+            .service-section p {
+                font-size: 0.9em; /* Slightly smaller text in the service sections */
+                line-height: 1.4;
+            }
+            .service-image {
+                max-width: 90%; /* Larger images on small devices */
+                height: auto; /* Ensure images maintain aspect ratio */
+                margin-bottom: 20px; /* Add space between images */
+            }
+            .image-container {
+                flex-direction: column; /* Stack images vertically on small screens */
+                align-items: center; /* Center images in the container */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Our Services</h1>
+
+        <div class="icon-card-container">
+            <div class="icon-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Premium Quality</h3>
+                <p>Experience the best with our meticulously maintained vehicles, ensuring your safety and driving pleasure at all times.</p>
+            </div>
+            <div class="icon-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>Affordable Rates</h3>
+                <p>Enjoy competitive rates and flexible offers that allow you to drive in comfort without compromising your budget.</p>
+            </div>
+            <div class="icon-card">
+                <i class="fas fa-comments"></i>
+                <h3>Attentive Service</h3>
+                <p>Our dedicated team is here to support you from start to finish, ensuring a smooth and hassle-free rental experience.</p>
+            </div>
+            <div class="icon-card">
+                <i class="fas fa-inbox"></i>
+                <h3>Trust & Transparency</h3>
+                <p>Benefit from clear pricing, full insurance coverage, and transparent rental conditions for peace of mind.</p>
+            </div>
+            <div class="icon-card">
+                <i class="fas fa-plane"></i>
+                <h3>Airport Pickup & Drop-Off</h3>
+                <p>Reliable and convenient airport services available at all major Moroccan airports, tailored to your schedule.</p>
+            </div>
+        </div>
+
+        <div class="service-section" data-icon="\f5b6">
+            <h2>Airport Pickup and Drop-Off</h2>
+            <p>AZARYOUH RIF CARS provides seamless airport pickup and drop-off services at major Moroccan airports, including Marrakesh, Fes, Casablanca, and Nador. Our professional drivers are committed to ensuring a stress-free and timely experience, allowing you to focus on your journey.</p>
+            
+            <!-- Add the images -->
+            <div class="image-container">
+                <img src="../static/SERVICES/S1.jpg" alt="Airport Pickup Image 1" class="service-image">
+                <img src="../static/SERVICES/S2.jpg" alt="Airport Pickup Image 2" class="service-image">
+            </div>
+        </div>
+        
+        <div class="service-section" data-icon="\f1b9">
+            <h2>Diverse Fleet of Vehicles</h2>
+            <p>Choose from our wide selection of vehicles, each meticulously maintained to meet your needs. Whether you need a compact car for city driving or a spacious SUV for a family trip, we have a vehicle that suits every occasion. Our fleet is regularly updated to ensure the highest standards of comfort and reliability.</p>
+
+            <!-- Add the images -->
+            <div class="image-container">
+                <img src="../static/SERVICES/S3.webp" alt="Diverse Fleet Image 1" class="service-image">
+                <img src="../static/SERVICES/S4.jpg" alt="Diverse Fleet Image 2" class="service-image">
+            </div>
+        </div>
+
+        <div class="service-section" data-icon="\f0ad">
+            <h2>24/7 Customer Support</h2>
+            <p>Our customer support team is available around the clock to assist you with any inquiries, booking changes, or emergencies. From roadside assistance to answering questions about your rental, we're here to help, day or night.</p>
+            
+            <!-- Add the images -->
+            <div class="image-container">
+                <img src="../static/SERVICES/S5.jpg" alt="Customer Support Image 1" class="service-image">
+                <img src="../static/SERVICES/S6.jpg" alt="Customer Support Image 2" class="service-image">
+            </div>
+        </div>
+
+        <!-- Swiper Slider -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/2018-peugeot-208-tech-edition-0.jpg" alt="Slide 1"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/2623000_532331_1_868e55eb88cb4e74.jpg" alt="Slide 2"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/6530722ab10c7aa5c2bc2d80.png" alt="Slide 3"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/825bmbb_1688483.webp" alt="Slide 4"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/dacia-logan-noir-nacre.png" alt="Slide 5"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/dacia-sandero-stepway-2017-2022-1635591066.858877.jpg" alt="Slide 6"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/thumb-Range-rover-Evoque-baby-velar-automatic.png" alt="Slide 7"></div>
+                <div class="swiper-slide"><img src="../static/SERVICES/Slide/yzdoorWaFUKOi6I5Re9M.png" alt="Slide 8"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Navigation Button -->
+        <a href="{{ url_for('cars') }}" class="navigation-button">View Our Cars</a>
+    </div>
+    
+    {% include 'footer.html' %}
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1, // Default to 1 slide for small screens
+            spaceBetween: 0,  // Remove space between slides on small screens
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                768: {  // Medium devices (e.g., tablets)
+                    slidesPerView: 2,  // Show 2 slides
+                    spaceBetween: 30,
+                },
+                1024: { // Large devices (e.g., desktops)
+                    slidesPerView: 3,  // Show 3 slides
+                    spaceBetween: 30,
+                }
+            }
+        });
+    </script>
+</body>
+</html>

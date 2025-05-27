@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Importing Google Font 'Poppins' */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* Footer Styles */
+        footer {
+            background-color: #f4f6f3;
+            color: black; /* Adjusted for contrast */
+            padding: 40px 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            text-align: left;
+            gap: 40px;
+        }
+
+        footer .column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        footer .column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: black; /* Adjusted for contrast */
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        footer .column h3::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #ff4c4c; 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer .column p, footer .column a {
+            font-size: 14px;
+            line-height: 1.6;
+            color: black; /* Adjusted for contrast */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .column a:hover {
+            color: #00bfff; 
+            text-decoration: none; 
+        }
+
+        footer .logo img {
+            width: auto;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        footer .social-icons a {
+            font-size: 20px;
+            color: black; /* Adjusted for contrast */
+            margin-right: 10px;
+        }
+
+        footer .social-icons a:hover {
+            color: #00bfff;
+        }
+
+        footer .contact p {
+            margin: 5px 0;
+        }
+        
+        footer .bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 14px;
+            color: black; /* Adjusted for contrast */
+        }
+        
+        footer .slogan {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: black; /* Adjusted for contrast */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            footer .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            footer .column {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="column logo">
+                <a href="{{ url_for('home') }}"><img src="../static/logo/logo.jpg" alt="Logo" class="footer-logo"></a>
+                <p class="slogan">WHEREVER YOU WANNA GO! JUST CLICK AND GO!!!!!!😎😎</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/+212661306515" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/location.taza/?locale=ar_AR" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/azaryouhcar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="column contact">
+                <h3>Contact</h3>
+                <p><i class="fas fa-home"></i> <a href="https://maps.app.goo.gl/qvSJd3RGvM7xcpS5A" target="_blank">Ben Abdellah immo AXA، Rue Ali Ibn Abi Talib Ang, Rue Allal Ben Abdallah, Taza 35000</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+212661306515">+212 661-306515</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:azaryouhrif@gmail.com">azaryouhrif@gmail.com</a></p>
+                <p><i class="fas fa-globe"></i> <a href="http://www.azarcars.com" target="_blank">www.azarcars.com</a></p>
+            </div>
+            <div class="column links">
+                <h3>Liens</h3>
+                <p><a href="{{ url_for('home') }}">Home</a></p>
+                <p><a href="{{ url_for('service') }}">Our Services</a></p>
+                <p><a href="{{ url_for('about') }}">About Us</a></p>
+                <p><a href="{{ url_for('admin') }}">Our Cars</a></p>
+            </div>
+            <div class="column opening-time">
+                <h3>Opening Time</h3>
+                <p>Mon - Tue: 8AM - 10PM</p>
+                <p>Wed: 8AM - 7PM</p>
+                <p>Fri: 7AM - 12PM</p>
+                <p>Sat: 9AM - 8PM</p>
+                <p>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="bottom">
+            &copy; 2024 – AZARYOUH RIF CAR – All rights reserved
+        </div>
+    </footer>
+    
+</body>
+</html>

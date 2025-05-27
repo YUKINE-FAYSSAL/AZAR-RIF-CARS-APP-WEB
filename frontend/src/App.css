@@ -1,0 +1,61 @@
+:root {
+  --bg-main: #f7f7f9;
+  --color-main: #23233c;
+  --bg-header: #fff;
+  --bg-card: #fff;
+  --card-radius: 16px;
+  --accent: #e30613;
+}
+[data-theme="dark"] {
+  --bg-main: #181824;
+  --color-main: #f7f7f9;
+  --bg-header: #23233c;
+  --bg-card: #222a35;
+  --accent: #e30613;
+}
+body, .App {
+  background: var(--bg-main) !important;
+  color: var(--color-main) !important;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", Arial, sans-serif;
+}
+.settings-container {
+  background: var(--bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: 0 2px 12px #0001;
+  padding: 30px 24px 16px 24px;
+  max-width: 460px;
+  margin: 34px auto;
+  color: var(--color-main);
+}
+.settings-row {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.settings-container h2 {
+  margin-bottom: 28px;
+  color: var(--accent);
+  font-size: 1.7rem;
+  letter-spacing: 0.7px;
+}
+.settings-container select,
+.settings-container input[type="checkbox"] {
+  margin-left: 12px;
+  font-size: 1rem;
+}
+[data-theme="dark"] .settings-container {
+  background: var(--bg-card) !important;
+  color: var(--color-main) !important;
+  box-shadow: 0 2px 14px #e3061317;
+}
+[data-theme="dark"] .settings-container h2 {
+  color: #fff;
+}
+[dir="rtl"] .settings-container,
+[dir="rtl"] .settings-row {
+  text-align: right;
+  direction: rtl;
+}

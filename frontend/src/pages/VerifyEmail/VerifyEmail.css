@@ -1,0 +1,123 @@
+/* VerifyEmail.css */
+.verify-container {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.verify-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.verify-container h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.verify-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  border-radius: 3px;
+}
+
+.verify-container p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.verify-container p strong {
+  color: #e30613;
+  font-weight: 600;
+}
+
+.verify-container input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.verify-container input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  outline: none;
+  background-color: #fff;
+}
+
+.verify-container button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.verify-container button:hover {
+  background: linear-gradient(to right, #43A047, #1B5E20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.verify-container button:active {
+  transform: translateY(0);
+}
+
+.error {
+  color: #E53935;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(229, 57, 53, 0.1);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.resend-link {
+  color: #4285F4;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.resend-link:hover {
+  color: #3367D6;
+  text-decoration: underline;
+}
+
+.verification-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #4CAF50;
+}

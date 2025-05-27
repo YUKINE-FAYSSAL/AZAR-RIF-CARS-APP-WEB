@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Car Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        /* Page header styles */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* Car card styles */
+        .car {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 400px;
+        }
+        .car h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .car p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Buttons styles */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            width: 100%;
+        }
+        .buttons button {
+            padding: 8px 12px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .buttons button:hover {
+            background-color: #555;
+        }
+        .add-car-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .add-car-btn:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            margin: 15px 0;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button.confirm {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .button.cancel {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Grid styles */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+
+        /* Image container styles */
+        .image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        function showDeleteModal(event, carId) {
+            event.preventDefault();
+            document.getElementById('deleteModal').style.display = 'block';
+            document.getElementById('confirmDelete').setAttribute('data-car-id', carId);
+        }
+
+        function hideDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        function confirmDelete() {
+            var carId = document.getElementById('confirmDelete').getAttribute('data-car-id');
+            document.getElementById('deleteForm-' + carId).submit();
+        }
+    </script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <a href="{{ url_for('add_car') }}" class="add-car-btn">Add a New Car</a>
+    <h1>Admin - Car Management</h1>
+    <div class="container car-grid">
+        {% for car in cars %}
+            <div class="car">
+                <h2>{{ car.make }} {{ car.model }}</h2>
+                <div class="image-container">
+                    {% if car.images %}
+                        <div id="carousel-{{ car._id }}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for image in car.images %}
+                                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                        <img src="{{ url_for('static', filename='uploads/' ~ image) }}" class="d-block w-100" alt="Car Image">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ car._id }}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ car._id }}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    {% else %}
+                        <img src="default-image.jpg" alt="Default Car Image" class="d-block w-100">
+                    {% endif %}
+                </div>
+                <p><strong>Year:</strong> {{ car.year }}</p>
+                <p><strong>Price:</strong> ${{ car.price }}</p>
+                <div class="buttons">
+                    <form id="deleteForm-{{ car._id }}" action="{{ url_for('delete_car', car_id=car._id) }}" method="POST">
+                        <button type="button" onclick="showDeleteModal(event, '{{ car._id }}')">Delete</button>
+                    </form>
+                    <a href="{{ url_for('edit_car', car_id=car._id) }}">
+                        <button type="button">Edit</button>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% include 'footer.html' %}
+
+    <!-- Modal de confirmation de suppression -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Confirm Delete</div>
+            <div class="modal-body">Are you sure you want to delete this car?</div>
+            <div class="modal-footer">
+                <button id="confirmDelete" class="button confirm" onclick="confirmDelete()">OK</button>
+                <button class="button cancel" onclick="hideDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
