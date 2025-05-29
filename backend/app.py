@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, request, session, redirect, url_for, flash, send_file
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_session import Session
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+from pymongo import MongoClient
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from PIL import Image, ImageDraw, ImageFont
@@ -22,14 +23,10 @@ app.config['UPLOAD_FOLDER'] = os.path.join('static', 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 Session(app)
-CORS(app, origins=[
-    "http://localhost:3000", 
-    "https://www.tazarentcar.com"
-], supports_credentials=True)
-
+CORS(app, supports_credentials=True)
 
 # ========== DATABASE INIT ==========
-client = MongoClient('mongodb://admin:FFaa2002%40@localhost:27017/')
+client = MongoClient('mongodb://admin:FFaa2002%40@localhost:27017/car_database?authSource=admin')
 db = client['car_database']
 users_collection = db['users']
 cars_collection = db['cars']
@@ -867,8 +864,20 @@ def send_verification_code_email(to_email, code):
         print("[❌ EMAIL VERIF FAILED]", e)
 
 
-@app.route('/api/send-verification-code', methods=['POST'])
+from flask_cors import cross_origin
+
+@app.route('/api/send-verification-code', methods=['POST', 'OPTIONS'])
+@cross_origin(
+    origins=["https://tazarentcar.com", "https://www.tazarentcar.com"],
+    supports_credentials=True,
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["POST", "OPTIONS"]
+)
 def send_verification_code():
+    print("==== send-verification-code REACHED ====")
+    if request.method == 'OPTIONS':
+        return '', 200
+
     data = request.get_json()
     to_email = data.get('email')
     if not to_email:
@@ -880,6 +889,8 @@ def send_verification_code():
 
     send_verification_code_email(to_email, code)
     return jsonify({'message': 'Code envoyé'})
+
+
 @app.route('/api/verify-code', methods=['POST'])
 def verify_code():
     data = request.get_json()
@@ -1113,7 +1124,11 @@ def create_default_admin():
 
 create_default_admin()
 
+@app.route('/api/debug-path', methods=['GET', 'POST'])
+def debug_path():
+    return jsonify({"path": request.path, "method": request.method})
 
+print(app.url_map)
 # ========== MAIN ==========
 if __name__ == '__main__':
     app.run(debug=False, host="0.0.0.0", port=5000)

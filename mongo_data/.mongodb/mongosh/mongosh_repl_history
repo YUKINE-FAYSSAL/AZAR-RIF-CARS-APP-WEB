@@ -1,4 +1,7 @@
 exit
+sudo nano /etc/nginx/sites-available/tazarentcar.com\
+show dbs
+exit
 show dbs
 exit
 dhow dbs
