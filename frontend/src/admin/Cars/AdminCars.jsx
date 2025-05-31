@@ -1,7 +1,7 @@
-// src/admin/AdminCars.jsx
+// src/admin/Cars/AdminCars.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import api from '../../services/api'; // ✅ remplace axios
 import Swal from 'sweetalert2';
 import './AdminCars.css';
 
@@ -11,7 +11,6 @@ const AdminCars = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('all');
   const navigate = useNavigate();
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetchCars();
@@ -19,7 +18,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const fetchCars = () => {
     setLoading(true);
-    axios.get(`${API_BASE_URL}/api/cars`)
+    api.get('/cars')
       .then(res => {
         setCars(res.data);
         setLoading(false);
@@ -42,7 +41,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
       cancelButtonText: 'Annuler'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`${API_BASE_URL}/api/car/${id}`)
+        api.delete(`/car/${id}`)
           .then(() => {
             setCars(prev => prev.filter(car => car._id !== id));
             Swal.fire('Supprimé!', 'La voiture a été supprimée.', 'success');
@@ -54,10 +53,10 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const filteredCars = cars.filter(car => {
     const matchesSearch = car.make.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         car.model.toLowerCase().includes(searchTerm.toLowerCase());
+                          car.model.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilter = filter === 'all' || 
-                        (filter === 'available' && car.is_available) || 
-                        (filter === 'unavailable' && !car.is_available);
+                         (filter === 'available' && car.is_available) || 
+                         (filter === 'unavailable' && !car.is_available);
     return matchesSearch && matchesFilter;
   });
 
@@ -99,7 +98,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
             <div className="admin-car-card" key={car._id}>
               <div className="admin-car-image-container">
                 <img
-                  src={`${API_BASE_URL}/api/car/${car._id}/images/${car.images?.[0] || 'default.jpg'}`}
+                  src={`${process.env.REACT_APP_API_URL}/api/car/${car._id}/images/${car.images?.[0] || 'default.jpg'}`}
                   alt={`${car.make} ${car.model}`}
                   className="admin-car-image"
                 />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../services/api'; // ✅ remplacer axios
 import './Stats.css';
 
 const Stats = () => {
@@ -14,7 +14,6 @@ const Stats = () => {
     recentContracts: 0,
     carTypes: {}
   });
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -31,7 +30,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/admin/stats`);
+        const res = await api.get('/admin/stats'); // ✅ remplacer axios par api
         setStats(res.data);
         setLoading(false);
       } catch (err) {

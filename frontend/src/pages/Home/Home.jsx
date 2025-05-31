@@ -263,7 +263,7 @@ api.post(`/api/reserve/${activeCar._id}`, {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/212612345678', '_blank');
+    window.open('https://wa.me/212661306515', '_blank');
   };
 function formatDateFR(date) {
   if (!date) return '';
@@ -598,9 +598,11 @@ function formatDateFR(date) {
         <h2>Informations de contact</h2>
         <div className="contact-container">
           <div className="contact-info">
-            <p><FaPhone /> +212 6 12 34 56 78</p>
-            <p><FaEnvelope /> contact@luxurycars.ma</p>
-            <p><FaMapMarkerAlt /> 123 Avenue Mohammed V, Casablanca</p>
+            <p><FaPhone /><a href="https://wa.me/212661306515" target="_blank" rel="noopener noreferrer" style={{color: "#25D366", textDecoration: "none", marginLeft: 8}}>
+    +212 6 61 30 65 15
+  </a></p>
+            <p><i className="fas fa-envelope"></i> <a href="mailto:azaryouhrif@gmail.com" style={{ color: "#e30613" }}>azaryouhrif@gmail.com</a></p>
+            <p><FaMapMarkerAlt /> Ben Abdellah immo AXA, Rue Ali Ibn Abi Talib Ang, Rue Allal Ben Abdallah, Taza 35000</p>
           </div>
           <div className="contact-info">
             <h3>Heures d'ouverture</h3>

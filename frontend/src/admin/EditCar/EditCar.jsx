@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import "./EditCar.css";
+import React, { useEffect, useState } from 'react';
+import api from '../../services/api';
+import './EditCar.css';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function EditCar() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState(null);
-  const [images, setImages] = useState([]); // Peut contenir des URLs (string) ou File
+  const [images, setImages] = useState([]);
   const [msg, setMsg] = useState("");
-  const API_BASE_URL = process.env.REACT_APP_API_URL;
 
-  // Charger les infos au chargement
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/api/car/${id}`)
+    api.get(`/api/car/${id}`)
       .then(res => {
-        // Adapter la valeur du radio en boolean
         setForm({
           ...res.data.car,
           is_available: res.data.car.is_available === true || res.data.car.is_available === "true"
@@ -25,7 +22,6 @@ export default function EditCar() {
       .catch(() => setMsg("Erreur de chargement"));
   }, [id]);
 
-  // Gestion des champs
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
@@ -37,18 +33,15 @@ export default function EditCar() {
     }
   }
 
-  // Gérer ajout de nouvelles images (Files)
   function handleFile(e) {
     const newFiles = Array.from(e.target.files);
     setImages(prev => [...prev, ...newFiles]);
   }
 
-  // Supprimer image (avant envoi !)
   const handleRemoveImage = (index) => {
     setImages(prev => prev.filter((_, i) => i !== index));
   };
 
-  // Soumission du formulaire
   async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -60,17 +53,16 @@ export default function EditCar() {
       }
     });
 
-    // Les anciennes images sont des strings, les nouvelles des File
     for (let img of images) {
       if (img instanceof File) {
-        formData.append("images", img); // Nouvelles images à uploader
+        formData.append("images", img);
       } else {
-        formData.append("old_images", img); // Images déjà dans la base
+        formData.append("old_images", img);
       }
     }
 
     try {
-      await axios.put(`${API_BASE_URL}/api/car/${id}`, formData, {
+      await api.put(`/api/car/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" }
       });
       setMsg("✅ Voiture modifiée !");
@@ -87,7 +79,6 @@ export default function EditCar() {
     </div>
   );
 
-  // --- Normalisation Transmission ---
   let transmissionValue = "";
   if (form.transmission) {
     if (["automatic", "automatique"].includes(form.transmission.toLowerCase())) {
@@ -163,19 +154,10 @@ export default function EditCar() {
         </div>
         <div className="upload-block">
           <label className="upload-label">
-            <span className="upload-btn">
-              📷 Ajouter des images
-            </span>
-            <input
-              type="file"
-              multiple
-              accept="image/*"
-              onChange={handleFile}
-              style={{ display: "none" }}
-            />
+            <span className="upload-btn">📷 Ajouter des images</span>
+            <input type="file" multiple accept="image/*" onChange={handleFile} style={{ display: "none" }} />
           </label>
         </div>
-        {/* Preview toutes les images (anciennes + nouvelles) */}
         {images.length > 0 && (
           <div className="editcar-imgs">
             {images.map((img, i) => (
@@ -185,9 +167,9 @@ export default function EditCar() {
                   src={
                     img instanceof File
                       ? URL.createObjectURL(img)
-                      : img.startsWith("/") // si c'est /static/uploads/...
-                        ? `${API_BASE_URL}${img}`
-                        : `${API_BASE_URL}/api/car/${id}/images/${img}`
+                      : img.startsWith("/")
+                        ? `${process.env.REACT_APP_API_URL}${img}`
+                        : `${process.env.REACT_APP_API_URL}/api/car/${id}/images/${img}`
                   }
                   alt="img"
                   className="editcar-img"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import './Users.css';
@@ -15,31 +15,24 @@ const Users = () => {
   const [showRoleModal, setShowRoleModal] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [newRole, setNewRole] = useState('');
-  const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     fetchUsers();
     fetchStats();
-    // eslint-disable-next-line
   }, []);
 
   const fetchUsers = () => {
     setLoading(true);
-    axios.get(`${API_BASE_URL}/api/admin/users`, {
-      withCredentials: true
-    })
+    api.get('/admin/users')
       .then(res => {
-      console.log('Users:', res.data); // <-- جرب شنو كيرجع
-      setUsers(res.data);
-    })
+        setUsers(res.data);
+      })
       .catch(err => console.error('Error loading users:', err))
       .finally(() => setLoading(false));
   };
 
   const fetchStats = () => {
-    axios.get(`${API_BASE_URL}/api/admin/users/stats`, {
-      withCredentials: true
-    })
+    api.get('/admin/users/stats')
       .then(res => setStats(res.data))
       .catch(err => console.error('Error loading stats:', err));
   };
@@ -56,10 +49,7 @@ const Users = () => {
       return;
     }
 
-    axios.post(`${API_BASE_URL}/api/admin/verify-password`,
-      { password },
-      { withCredentials: true }
-    )
+    api.post('/admin/verify-password', { password })
       .then(response => {
         if (response.data.valid) {
           performRoleChange();
@@ -74,10 +64,7 @@ const Users = () => {
   };
 
   const performRoleChange = () => {
-    axios.put(`${API_BASE_URL}/api/admin/users/${encodeURIComponent(currentUser.email)}/role`,
-      { role: newRole },
-      { withCredentials: true }
-    )
+    api.put(`/admin/users/${encodeURIComponent(currentUser.email)}/role`, { role: newRole })
       .then(() => {
         setUsers(prev => prev.map(u =>
           u.email === currentUser.email ? { ...u, role: newRole } : u
@@ -100,7 +87,7 @@ const Users = () => {
         {
           label: 'Yes',
           onClick: () => {
-            axios.delete(`${API_BASE_URL}/api/admin/users/${encodeURIComponent(email)}`)
+            api.delete(`/admin/users/${encodeURIComponent(email)}`)
               .then(() => setUsers(prev => prev.filter(u => u.email !== email)))
               .catch(err => console.error('Error deleting user:', err));
           }
@@ -113,7 +100,6 @@ const Users = () => {
     });
   };
 
-  // -- Search/filter logic (fullName, email, phone)
   const filtered = users
     .filter(u => {
       const name = u.fullName ? u.fullName.toLowerCase() : '';

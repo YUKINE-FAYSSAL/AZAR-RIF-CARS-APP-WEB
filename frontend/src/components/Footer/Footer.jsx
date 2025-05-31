@@ -43,7 +43,7 @@ export default function Footer() {
           </p>
           <p className="footer-contact-item">
             <i className="fas fa-globe"></i>
-            <a href="http://www.azarcars.com" target="_blank" rel="noopener noreferrer">www.azarcars.com</a>
+            <a href="https://www.tazarentcar.com/" target="_blank" rel="noopener noreferrer">www.tazarentcar.com</a>
           </p>
         </div>
         {/* Links */}

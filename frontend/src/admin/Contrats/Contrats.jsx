@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import './Contrats.css';
 
 const Contrats = () => {
@@ -9,7 +9,6 @@ const Contrats = () => {
   const [sort, setSort] = useState('desc');
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,7 +25,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const fetchContrats = () => {
     setLoading(true);
-    axios.get(`${API_BASE_URL}/api/admin/contrats`)
+    api.get('/api/admin/contrats')
       .then(res => {
         setContrats(res.data);
         setLoading(false);
@@ -42,13 +41,13 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!files.length) return;
-    
+
     const data = new FormData();
     for (let i = 0; i < files.length; i++) data.append('contrats', files[i]);
-    
-    axios.post(`${API_BASE_URL}/api/admin/contrats`, data)
-      .then(() => { 
-        fetchContrats(); 
+
+    api.post('/api/admin/contrats', data)
+      .then(() => {
+        fetchContrats();
         setFiles([]);
       })
       .catch(() => alert('❌ Erreur lors de l\'upload'));
@@ -56,7 +55,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const handleDelete = (filename) => {
     if (!window.confirm(`Supprimer le contrat "${filename}" ?`)) return;
-    axios.delete(`${API_BASE_URL}/api/admin/contrats/${filename}`)
+    api.delete(`/api/admin/contrats/${filename}`)
       .then(() => fetchContrats())
       .catch(() => alert('Erreur lors de la suppression'));
   };
@@ -137,7 +136,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
               </div>
               <div className="contrat-actions">
                 <a 
-                  href={`${API_BASE_URL}/api/admin/contrats/download/${c.filename}`} 
+                  href={`${process.env.REACT_APP_API_URL}/api/admin/contrats/download/${c.filename}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-download"
@@ -171,7 +170,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL;
                   <td>{new Date(c.date).toLocaleDateString('fr-FR')}</td>
                   <td className="actions-cell">
                     <a 
-                      href={`${API_BASE_URL}/api/admin/contrats/download/${c.filename}`} 
+                      href={`${process.env.REACT_APP_API_URL}/api/admin/contrats/download/${c.filename}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="btn-download"

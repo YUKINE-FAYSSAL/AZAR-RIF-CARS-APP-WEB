@@ -13,7 +13,6 @@ import Services from './pages/Services/Services';
 import EditCar from './admin/EditCar/EditCar';
 import VerifyEmail from './pages/VerifyEmail/VerifyEmail';
 import Footer from './components/Footer/Footer';
-import axios from 'axios';
 import "./App.css";
 
 // ADMIN
@@ -25,7 +24,9 @@ import AdminStats from './admin/Stats/Stats';
 import AdminContrats from './admin/Contrats/Contrats';
 import Reservations from './admin/Reservations/Reservations';
 
-// 🛑 هذا الكود يسكت جميع تحذيرات SourceMap/ResizeObserver في dev فقط!
+// Supprimer axios (on utilise api.js maintenant)
+
+// 🛑 Dev warnings silencieux
 if (process.env.NODE_ENV === "development") {
   const suppressedWarnings = [
     "Failed to parse source map",
@@ -43,8 +44,6 @@ if (process.env.NODE_ENV === "development") {
     realConsoleError(...args);
   };
 }
-
-axios.defaults.withCredentials = true;
 
 function App() {
   return (
@@ -70,9 +69,9 @@ function App() {
             <Route path="users" element={<AdminUsers />} />
             <Route path="stats" element={<AdminStats />} />
             <Route path="contrats" element={<AdminContrats />} />
-            <Route path="/admin/dashboard/reservations" element={<Reservations />} />
+            <Route path="reservations" element={<Reservations />} />
           </Route>
-          {/* EditCar: à placer HORS du nested dashboard sinon param ne passe pas bien */}
+
           <Route path="/admin/dashboard/edit-car/:id" element={<EditCar />} />
         </Routes>
         <Footer />

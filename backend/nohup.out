@@ -1,0 +1,601 @@
+[2025-05-27 05:45:43 +0000] [589377] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 05:45:43 +0000] [589377] [INFO] Listening at: http://0.0.0.0:5000 (589377)
+[2025-05-27 05:45:43 +0000] [589377] [INFO] Using worker: sync
+[2025-05-27 05:45:43 +0000] [589378] [INFO] Booting worker with pid: 589378
+[2025-05-27 05:47:23,011] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:47:23,590] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:47:23,988] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:47:24,178] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:51:49,834] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:51:57,233] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:53:34,387] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 05:53:35,042] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 06:01:37,499] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 06:03:35,985] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 06:03:36,644] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/routes.py", line 9, in home
+    return render_template('home.html', cars=cars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: home.html
+[2025-05-27 07:06:56 +0000] [590638] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 07:06:56 +0000] [590638] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:06:56 +0000] [590638] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:06:57 +0000] [590638] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:06:57 +0000] [590638] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:06:58 +0000] [590638] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:06:58 +0000] [590638] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:06:59 +0000] [590638] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:06:59 +0000] [590638] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:07:00 +0000] [590638] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:07:00 +0000] [590638] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:07:01 +0000] [590638] [ERROR] Can't connect to ('0.0.0.0', 5000)
+[2025-05-27 07:23:08 +0000] [590705] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 07:23:08 +0000] [590705] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:23:08 +0000] [590705] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:23:09 +0000] [590705] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:23:09 +0000] [590705] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:23:10 +0000] [590705] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:23:10 +0000] [590705] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:23:11 +0000] [590705] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:23:11 +0000] [590705] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:23:12 +0000] [590705] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-05-27 07:23:12 +0000] [590705] [ERROR] connection to ('0.0.0.0', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:23:13 +0000] [590705] [ERROR] Can't connect to ('0.0.0.0', 5000)
+[2025-05-27 07:56:40 +0000] [591090] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 07:56:40 +0000] [591090] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 07:56:40 +0000] [591090] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:56:41 +0000] [591090] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 07:56:41 +0000] [591090] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:56:42 +0000] [591090] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 07:56:42 +0000] [591090] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:56:43 +0000] [591090] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 07:56:43 +0000] [591090] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:56:44 +0000] [591090] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 07:56:44 +0000] [591090] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 07:56:45 +0000] [591090] [ERROR] Can't connect to ('127.0.0.1', 5000)
+[2025-05-27 08:00:02 +0000] [591127] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 08:00:02 +0000] [591127] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 08:00:02 +0000] [591127] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 08:00:03 +0000] [591127] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 08:00:03 +0000] [591127] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 08:00:04 +0000] [591127] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 08:00:04 +0000] [591127] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 08:00:05 +0000] [591127] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 08:00:05 +0000] [591127] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 08:00:06 +0000] [591127] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 08:00:06 +0000] [591127] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 08:00:07 +0000] [591127] [ERROR] Can't connect to ('127.0.0.1', 5000)
+[2025-05-27 08:03:54 +0000] [591189] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 08:03:54 +0000] [591189] [INFO] Listening at: http://127.0.0.1:5000 (591189)
+[2025-05-27 08:03:54 +0000] [591189] [INFO] Using worker: sync
+[2025-05-27 08:03:54 +0000] [591190] [INFO] Booting worker with pid: 591190
+[2025-05-27 08:24:27 +0000] [591190] [INFO] Worker exiting (pid: 591190)
+[2025-05-27 08:24:27 +0000] [591189] [INFO] Handling signal: term
+[2025-05-27 08:24:27 +0000] [592355] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 08:24:27 +0000] [592355] [INFO] Listening at: http://127.0.0.1:5000 (592355)
+[2025-05-27 08:24:27 +0000] [592355] [INFO] Using worker: sync
+[2025-05-27 08:24:27 +0000] [592356] [INFO] Booting worker with pid: 592356
+[2025-05-27 08:24:27 +0000] [591189] [INFO] Shutting down: Master
+[2025-05-27 08:27:50 +0000] [592355] [INFO] Handling signal: term
+[2025-05-27 08:27:50 +0000] [592356] [INFO] Worker exiting (pid: 592356)
+[2025-05-27 08:27:50 +0000] [592355] [ERROR] Worker (pid:592356) was sent SIGTERM!
+[2025-05-27 08:27:50 +0000] [592355] [INFO] Shutting down: Master
+[2025-05-27 08:27:58 +0000] [592364] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 08:27:58 +0000] [592364] [INFO] Listening at: http://127.0.0.1:5000 (592364)
+[2025-05-27 08:27:58 +0000] [592364] [INFO] Using worker: sync
+[2025-05-27 08:27:58 +0000] [592365] [INFO] Booting worker with pid: 592365
+[2025-05-27 08:31:15 +0000] [592364] [INFO] Handling signal: term
+[2025-05-27 08:31:15 +0000] [592365] [INFO] Worker exiting (pid: 592365)
+[2025-05-27 08:31:15 +0000] [592386] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 08:31:15 +0000] [592386] [INFO] Listening at: http://127.0.0.1:5000 (592386)
+[2025-05-27 08:31:15 +0000] [592386] [INFO] Using worker: sync
+[2025-05-27 08:31:15 +0000] [592387] [INFO] Booting worker with pid: 592387
+[2025-05-27 08:31:15 +0000] [592364] [INFO] Shutting down: Master
+[2025-05-27 09:14:46,123] ERROR in app: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/app/auth.py", line 12, in login
+    user_data = mongo.db.users.find_one({'username': username})
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/collection.py", line 1755, in find_one
+    for result in cursor.limit(-1):
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/cursor.py", line 1284, in __next__
+    return self.next()
+           ^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/cursor.py", line 1260, in next
+    if len(self._data) or self._refresh():
+                          ^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/cursor.py", line 1208, in _refresh
+    self._send_message(q)
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/cursor.py", line 1102, in _send_message
+    response = client._run_operation(
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 1917, in _run_operation
+    return self._retryable_read(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 2026, in _retryable_read
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 1993, in _retry_internal
+    ).run()
+      ^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 2730, in run
+    return self._read() if self._is_read else self._write()
+           ^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 2891, in _read
+    return self._func(self._session, self._server, conn, read_pref)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 1908, in _cmd
+    return server.run_operation(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/helpers.py", line 47, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/synchronous/server.py", line 227, in run_operation
+    _check_command_response(first, conn.max_wire_version)
+  File "/root/LAST-VERSION-PROJECT-FLASK-REACT-/backend/venv/lib/python3.12/site-packages/pymongo/helpers_shared.py", line 250, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: Command find requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command find requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+[2025-05-27 09:32:18 +0000] [592386] [INFO] Handling signal: term
+[2025-05-27 09:32:18 +0000] [592387] [INFO] Worker exiting (pid: 592387)
+[2025-05-27 09:32:18 +0000] [593238] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 09:32:18 +0000] [593238] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-05-27 09:32:18 +0000] [593238] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 98] Address already in use
+[2025-05-27 09:32:18 +0000] [592386] [INFO] Shutting down: Master
+[2025-05-27 09:32:19 +0000] [593238] [INFO] Listening at: http://127.0.0.1:5000 (593238)
+[2025-05-27 09:32:19 +0000] [593238] [INFO] Using worker: sync
+[2025-05-27 09:32:19 +0000] [593239] [INFO] Booting worker with pid: 593239
+[2025-05-27 09:32:24 +0000] [593238] [INFO] Handling signal: term
+[2025-05-27 09:32:24 +0000] [593239] [INFO] Worker exiting (pid: 593239)
+[2025-05-27 09:32:24 +0000] [593238] [INFO] Shutting down: Master
+[2025-05-27 09:37:53 +0000] [593248] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 09:37:53 +0000] [593248] [INFO] Listening at: http://127.0.0.1:5000 (593248)
+[2025-05-27 09:37:53 +0000] [593248] [INFO] Using worker: sync
+[2025-05-27 09:37:53 +0000] [593249] [INFO] Booting worker with pid: 593249
+[2025-05-27 09:46:39 +0000] [593248] [INFO] Handling signal: hup
+[2025-05-27 09:46:39 +0000] [593248] [INFO] Hang up: Master
+[2025-05-27 09:46:39 +0000] [593248] [ERROR] Worker (pid:593249) was sent SIGHUP!
+[2025-05-27 09:46:39 +0000] [593267] [INFO] Booting worker with pid: 593267
+[2025-05-27 13:12:58 +0000] [3003] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 13:12:58 +0000] [3003] [INFO] Listening at: http://127.0.0.1:5000 (3003)
+[2025-05-27 13:12:58 +0000] [3003] [INFO] Using worker: sync
+[2025-05-27 13:12:58 +0000] [3004] [INFO] Booting worker with pid: 3004
+[2025-05-27 13:16:54 +0000] [3004] [INFO] Worker exiting (pid: 3004)
+[2025-05-27 13:16:54 +0000] [3003] [INFO] Handling signal: term
+[2025-05-27 13:16:54 +0000] [3003] [ERROR] Worker (pid:3004) was sent SIGTERM!
+[2025-05-27 13:16:54 +0000] [3003] [INFO] Shutting down: Master
+[2025-05-27 13:16:54 +0000] [3259] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 13:16:54 +0000] [3259] [INFO] Listening at: http://127.0.0.1:5000 (3259)
+[2025-05-27 13:16:54 +0000] [3259] [INFO] Using worker: sync
+[2025-05-27 13:16:54 +0000] [3260] [INFO] Booting worker with pid: 3260
+[2025-05-27 13:16:59 +0000] [3260] [INFO] Worker exiting (pid: 3260)
+[2025-05-27 13:16:59 +0000] [3259] [INFO] Handling signal: term
+[2025-05-27 13:16:59 +0000] [3259] [ERROR] Worker (pid:3260) was sent SIGTERM!
+[2025-05-27 13:16:59 +0000] [3259] [INFO] Shutting down: Master
+[2025-05-27 13:16:59 +0000] [3264] [INFO] Starting gunicorn 23.0.0
+[2025-05-27 13:16:59 +0000] [3264] [INFO] Listening at: http://127.0.0.1:5000 (3264)
+[2025-05-27 13:16:59 +0000] [3264] [INFO] Using worker: sync
+[2025-05-27 13:16:59 +0000] [3265] [INFO] Booting worker with pid: 3265
+[2025-05-27 13:22:20 +0000] [3264] [INFO] Handling signal: term
+[2025-05-27 13:22:20 +0000] [3265] [INFO] Worker exiting (pid: 3265)
+[2025-05-27 13:22:20 +0000] [3264] [INFO] Shutting down: Master

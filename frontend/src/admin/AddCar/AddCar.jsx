@@ -1,6 +1,6 @@
 // src/admin/AddCar/AddCar.jsx
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import './AddCar.css';
 
 const AddCar = ({ onCarAdded }) => {
@@ -62,10 +62,10 @@ const AddCar = ({ onCarAdded }) => {
     images.forEach(img => data.append('images', img));
 
     try {
-      await axios.post(`${API_BASE_URL}/api/cars`, data, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        withCredentials: true
-      });
+      await api.post('/cars', data, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+    withCredentials: true
+});
       setMessage('✅ Voiture ajoutée avec succès');
       setForm({
         make: '', model: '', year: '', price: '',
