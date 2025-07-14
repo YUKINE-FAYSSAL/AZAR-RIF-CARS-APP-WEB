@@ -857,7 +857,7 @@ def send_verification_code_email(to_email, code):
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("fayssal.abaibat.2002@gmail.com", "kymi wunu jftx aqst")
+            smtp.login("email", "youre code")
             smtp.send_message(msg)
             print(f"[✅ EMAIL VERIF CODE] envoyé à {to_email}")
     except Exception as e:
@@ -988,7 +988,7 @@ L'équipe Taza Rent Car
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("fayssal.abaibat.2002@gmail.com", "kymi wunu jftx aqst")
+            smtp.login("email", "code")
             smtp.send_message(msg)
             print(f"[✅ EMAIL TRANSPORT] envoyé à {to_email}")
     except Exception as e:
@@ -1097,7 +1097,7 @@ L'équipe Taza Rent Car
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("fayssal.abaibat.2002@gmail.com", "kymi wunu jftx aqst")
+            smtp.login("email", "code")
             smtp.send_message(msg)
             print(f"[✅ EMAIL] envoyé à {to_email}")
     except Exception as e:
